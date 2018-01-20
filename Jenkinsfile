@@ -4,7 +4,7 @@ pipeline
 
 	environment
 	{
-		APP=TestingDemo
+		APP="TestingDemo"
 	}
 
 	stages

@@ -16,7 +16,8 @@ pipeline
 				echo "building app"
 
 				sh '''
-					xcodebuild archive -archivePath $APP.xcarchive -scheme $APP -project $APP.xcodeproj
+					xcodebuild -list
+					xcodebuild archive -archivePath $APP.xcarchive -project $APP.xcodeproj
 					xcodebuild -target $APP -exportArchive -archivePath $APP.xcarchive -exportPath $APP.ipa -exportOptionsPlist $APP/Info.plist
 				   '''
 			}

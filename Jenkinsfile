@@ -17,7 +17,7 @@ pipeline
 
 				sh '''
 					xcodebuild -list
-					xcodebuild archive -archivePath $APP.xcarchive -project $APP.xcodeproj -configuration Debug
+					xcodebuild archive -archivePath $APP.xcarchive -scheme $APP -project $APP.xcodeproj 
 					xcodebuild -target $APP -exportArchive -archivePath $APP.xcarchive -exportPath $APP.ipa -exportOptionsPlist $APP/Info.plist
 				   '''
 			}

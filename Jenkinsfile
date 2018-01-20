@@ -15,10 +15,8 @@ pipeline
 			{
 				echo "building app"
 
-				sh "env"
-
 				sh '''
-					xcodebuild archive -archivePath $APP.xcarchive -scheme $APP
+					xcodebuild archive -archivePath $APP.xcarchive #-scheme $APP
 				   '''
 			}
 		}

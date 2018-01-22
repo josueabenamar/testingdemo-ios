@@ -14,7 +14,7 @@ pipeline
 			steps
 			{
 				sh '''
-					rm *.xcarchive
+					rm -rf *.xcarchive
 					rm *.ipa
 				   '''
 			}

@@ -37,7 +37,7 @@ pipeline
 		{
 			steps
 			{
-				archive $APP.ipa
+				archive "$APP.ipa"
 			}
 		}
 	}

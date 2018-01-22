@@ -37,7 +37,7 @@ pipeline
 		{
 			steps
 			{
-				archiveArtifacts artifacts: "$APP.ipa"
+				archive TestingDemo.ipa
 			}
 		}
 	}

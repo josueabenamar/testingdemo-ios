@@ -9,6 +9,17 @@ pipeline
 
 	stages
 	{
+		stage("Initialize")
+		{
+			steps
+			{
+				sh '''
+					rm *.xcarchive
+					rm *.ipa
+				   '''
+			}
+		}
+
 		stage("Build")
 		{
 			steps
@@ -19,6 +30,14 @@ pipeline
 					xcodebuild archive -archivePath $APP.xcarchive -scheme $APP
 					xcodebuild -target $APP -exportArchive -archivePath $APP.xcarchive -exportPath $APP.ipa #-exportOptionsPlist $APP/Info.plist
 				   '''
+			}
+		}
+
+		stage("Publish")
+		{
+			steps
+			{
+				archive $APP.ipa
 			}
 		}
 	}
